@@ -1,31 +1,27 @@
 package Ifelse;
-
+//Write a Java program that takes three side lengths as input and prints the type of triangle:
+//
+//Equilateral → all three sides are equal
+//Isosceles → exactly two sides are equal
+//Scalene → all three sides are different
 import java.util.Scanner;
 
 public class Example12 {
     public static void main(String[] args) {
-
-
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter day number: ");
-        int day = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
-        if (day == 1) {
-            System.out.println("Monday");
-        } else if (day == 2) {
-            System.out.println("Tuesday");
-        } else if (day == 3) {
-            System.out.println("Wednesday");
-        } else if (day == 4) {
-            System.out.println("Thursday");
-        } else if (day == 5) {
-            System.out.println("Friday");
-        } else if (day == 6 || day == 7) {
-            System.out.println("Weekend");
+        if (a == b && b == c) {
+            System.out.println("Equilateral");
+        } else if (a == b || b == c || a == c) {
+            System.out.println("Isosceles");
         } else {
-            System.out.println("Invalid day number");
+            System.out.println("Scalene");
         }
     }
 
-}
+
+    }

@@ -1,30 +1,25 @@
 package Ifelse;
-
+//Write a Java program that takes one character as input and prints:
+//
+//Alphabet → if the character is A-Z or a-z
+//Digit → if the character is 0-9
+//Special Character → for any other character
 import java.util.Scanner;
 
-public class Example08{
-        public static void main(String[] args) {
+public class Example08 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char ch =sc.next().charAt(0);
 
-            Scanner sc = new Scanner(System.in);
-
-            System.out.print("Enter day number: ");
-            int day = sc.nextInt();
-
-            if (day == 1) {
-                System.out.println("Monday");
-            } else if (day == 2) {
-                System.out.println("Tuesday");
-            } else if (day == 3) {
-                System.out.println("Wednesday");
-            } else if (day == 4) {
-                System.out.println("Thursday");
-            } else if (day == 5) {
-                System.out.println("Friday");
-            } else if (day == 6 || day == 7) {
-                System.out.println("Weekend");
-            } else {
-                System.out.println("Invalid day number");
-            }
+        if((ch>='A'&& ch<='z')||(ch>='a' && ch<='z')){
+            System.out.println("ALPHABET");
+        } else if (ch>='0'&&ch<='9'){
+            System.out.println("number");
         }
-    }
+        else{
+            System.out.println("Special Character");
+        }
 
+
+    }
+}

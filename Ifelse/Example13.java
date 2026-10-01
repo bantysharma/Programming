@@ -4,28 +4,36 @@ import java.util.Scanner;
 
 public class Example13 {
     public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
 
+    int day = sc.nextInt();
+    int month = sc.nextInt();
+    int year = sc.nextInt();
 
-        Scanner sc = new Scanner(System.in);
+    boolean valid = false;
 
-        System.out.print("Enter day number: ");
-        int day = sc.nextInt();
+        if (month >= 1 && month <= 12) {
 
-        if (day == 1) {
-            System.out.println("Monday");
-        } else if (day == 2) {
-            System.out.println("Tuesday");
-        } else if (day == 3) {
-            System.out.println("Wednesday");
-        } else if (day == 4) {
-            System.out.println("Thursday");
-        } else if (day == 5) {
-            System.out.println("Friday");
-        } else if (day == 6 || day == 7) {
-            System.out.println("Weekend");
+        if (month == 2) {
+            if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+                valid = (day >= 1 && day <= 29);
+            } else {
+                valid = (day >= 1 && day <= 28);
+            }
+
+        } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+            valid = (day >= 1 && day <= 30);
+
         } else {
-            System.out.println("Invalid day number");
+            valid = (day >= 1 && day <= 31);
         }
     }
+
+        if (valid) {
+        System.out.println("Valid Date");
+    } else {
+        System.out.println("Invalid Date");
+    }
+}
 
 }
